@@ -1,0 +1,51 @@
+[
+    {
+      "name": "Grognak",
+      "class": "Barbarian",
+      "race": "Orc",
+      "level": "1",
+      "hitPoints": "14", 
+      "strength": "18",
+      "dexterity": "14",
+      "constitution": "14",
+      "intelligence": "8",
+      "wisdom": "12",
+      "charisma": "10",
+      "armorClass": "15",
+      "attacks": "TBD",
+      "spells": "TBD"
+    },
+    {
+        "name": "LLewin",
+        "class": "Mage",
+        "race": "Elf",
+        "level": "1",
+        "hitPoints": "5", 
+        "strength": "8",
+        "dexterity": "14",
+        "constitution": "14",
+        "intelligence": "17",
+        "wisdom": "12",
+        "charisma": "10",
+        "armorClass": "12",
+        "attacks": "TBD",
+        "spells": "TBD"
+      },
+      {
+        "name": "James",
+        "class": "Ranger",
+        "race": "Human",
+        "level": "1",
+        "hitPoints": "13", 
+        "strength": "10",
+        "dexterity": "17",
+        "constitution": "14",
+        "intelligence": "12",
+        "wisdom": "14",
+        "charisma": "8",
+        "armorClass": "15",
+        "attacks": "TBD",
+        "spells": "TBD"
+      }
+  
+  ]
