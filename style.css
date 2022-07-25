@@ -1,0 +1,32 @@
+body {
+    background-image: url("login-screen.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-position: center;
+}
+
+.col-5 {
+    height: 75vh;
+    background-color: rgb(41, 45, 49);
+    opacity: 70%;
+    
+    /* max-width: 30%; */
+}
+
+.container {
+  border-image-source: url("border-image.jpg") 30 round;
+  border: 15px;
+  border-radius: 10px;
+}
+
+.card-body {
+    background-color: rgb(41, 45, 49);
+    height: 74vh;
+}
+
+.button1 {
+    background-color: rgb(255, 0, 0);
+    border-color: white;
+    border-radius: 5px;
+}
