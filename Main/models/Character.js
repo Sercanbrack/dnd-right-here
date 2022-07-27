@@ -11,6 +11,13 @@ Character.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user',
+              key: 'id',
+            },
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -59,7 +66,6 @@ Character.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        // How do we add multiple variables to a character in attacks/spells?
         attacks: {
             type: DataTypes.INTEGER,
             allowNull: true,
