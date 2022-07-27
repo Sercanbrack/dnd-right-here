@@ -59,7 +59,6 @@ Character.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        // How do we add multiple variables to a character in attacks/spells?
         attacks: {
             type: DataTypes.INTEGER,
             allowNull: true,
