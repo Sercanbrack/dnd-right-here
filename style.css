@@ -4,12 +4,15 @@ body {
     background-attachment: fixed;
     background-blend-mode: multiply;
     background-position: center;
+    font-family: 'Fondamento', cursive;
+    height: 100vh;
 }
 
 .col-5 {
     height: 75vh;
     background-color: rgb(41, 45, 49);
     opacity: 70%;
+    font-family: 'Fondamento', cursive;
     
     /* max-width: 30%; */
 }
@@ -18,11 +21,12 @@ body {
   border-image-source: url("border-image.jpg") 30 round;
   border: 15px;
   border-radius: 10px;
+  font-family: 'Fondamento', cursive;
 }
 
 .card-body {
     background-color: rgb(41, 45, 49);
-    height: 74vh;
+    height: 75vh;
 }
 
 .button1 {
