@@ -1,0 +1,10 @@
+*{
+    font-family: 'Fondamento';
+}
+
+.card{
+    border-radius: 10px;
+    border-width: 25px;
+    border-color:black;
+    box-shadow: 5px;
+}
