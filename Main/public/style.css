@@ -1,32 +1,38 @@
 body {
-    background-image: url("login-screen.jpg");
+    background-image: url("images/login-screen.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-blend-mode: multiply;
     background-position: center;
+    font-family: 'Fondamento', cursive;
+    height: 100vh;
 }
 
-.col-5 {
-    height: 75vh;
+.cool-bkg {
     background-color: rgb(41, 45, 49);
     opacity: 70%;
-    
-    /* max-width: 30%; */
+    font-family: 'Fondamento', cursive;
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url("/Main/public/images/border-image.jpg") 30% round;
 }
 
 .container {
-  border-image-source: url("border-image.jpg") 30 round;
-  border: 15px;
-  border-radius: 10px;
+  font-family: 'Fondamento', cursive;
+  width: 35% !important;
 }
 
 .card-body {
     background-color: rgb(41, 45, 49);
-    height: 74vh;
+    height: 75vh;
 }
 
 .button1 {
     background-color: rgb(255, 0, 0);
     border-color: white;
     border-radius: 5px;
+}
+
+.card {
+    height: 75vh;
 }
