@@ -50,9 +50,11 @@ router.get("/character/:id", async (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
+      console.log("you are logged")
         res.redirect("/");
         return;
     }
+    console.log("you are not logged")
     res.render("login");
 });
 
