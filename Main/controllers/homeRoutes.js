@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User, Character } = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const characterData = await Character.findAll({
       include: [
@@ -17,12 +17,13 @@ router.get("/", async (req, res) => {
     );
     res.render("homepage", {
       character,
-      loggec_in: req.session.logged_in,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 router.get("/character/:id", async (req, res) => {
   try {
@@ -46,23 +47,6 @@ router.get("/character/:id", async (req, res) => {
   }
 });
 
-router.get('/', withAuth, async (req,res) => {
-    try{
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: {exclude: ["password"]},
-            include: [{model: Character}],
-        });
-
-        const user = userData.get({plain: true});
-
-        res.render('/', {
-            ...user,
-            logged_in: true
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-})
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
@@ -72,10 +56,5 @@ router.get('/login', (req, res) => {
     res.render("login");
 });
 
-router.get("/new.character", async, (req, res) => {
-    try{
-        const characterData = await // not sure how to carry on here
-    }
-})
 
 module.exprots = router;
