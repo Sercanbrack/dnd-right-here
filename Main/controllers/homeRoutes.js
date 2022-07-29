@@ -57,4 +57,4 @@ router.get('/login', (req, res) => {
 });
 
 
-module.exprots = router;
+module.exports = router;
