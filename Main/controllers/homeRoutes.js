@@ -24,30 +24,6 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-
-router.get("/character/:id", async (req, res) => {
-  try {
-    const characterData = await Character.findByPK(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-      ],
-    });
-
-    const character = characterData.get({ plain: true });
-
-    res.render("character", {
-      ...character,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect("/");
@@ -55,6 +31,7 @@ router.get('/login', (req, res) => {
     }
     res.render("login");
 });
+
 
 
 module.exports = router;
