@@ -1,1 +1,68 @@
-<h1>detail page placeholder</h1>
+<div class="container float-left">
+            <form>
+         <div class="form-row">
+             <div class="form-group col-6">
+                       <span>{{<character.name}}</span>
+             <div class="form-group col-6">
+                 <div class="form-row">
+                     <div class="form-group col">
+                        <span>{{character.class}}</span>
+                    </div>
+                     <div class="form-group col">
+                        <label for="inputPlayer">Player:</label>
+                        <input type="text" class="form-control" id="inputPlayer" placeholder="Player">
+                    </div>
+                </div>
+                 <div class="form-row">
+                     <div class="form-group col">
+                       <span>{{character.race}}</span>
+                    </div>
+                     <div class="form-group col">
+                        <span>{{character.level}}</span>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+         <div class="form-row">
+            <div class="form-group col-4">
+                <span>{{character.strength}}</span>>     
+            <div class="form-group col-4">
+                <span>{{character.armorClass}}</span>
+            </div>
+             <div class="form-group col-4">
+                 <div class="row">
+                     <div class="form-group col-2">
+                        <span>{{character.hitpoints}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="form-row">
+             <div class="form-group col-3">
+                 <div class="form-row">
+                     <span>{{character.dexterity}}</span>
+                </div>
+                 <div class="form-row">
+                     <span>{{character.constitution}}</span>
+                </div>
+                 <div class="form-row">
+                    <span>{{character.intelligence}}</span>
+                </div>
+                 <div class="form-row">
+                    <span>{{character.wisdom}}</span>
+                </div>
+                 <div class="form-row">
+                    <span>{{character.charisma}}</span>
+                </div>
+            </div>
+             <div class="form-group col-9">
+                <span>{{character.attacks}}</span>
+            </div>
+             <div class="form-group col-9">
+                <span>{{character.spells}}</span>
+            </div>
+        </div>
+            </form>
+</div>
