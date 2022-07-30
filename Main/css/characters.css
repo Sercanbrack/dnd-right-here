@@ -4,7 +4,10 @@
 
 .card{
     border-radius: 10px;
-    border-width: 25px;
+    border-width: 2px;
     border-color:black;
     box-shadow: 5px;
+}
+#card {
+    background-image: url("/Main/public/images/Symbol-Images/DnD-Paladin.png");
 }
