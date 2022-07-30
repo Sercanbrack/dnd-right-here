@@ -1,6 +1,6 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
-    const email = document.querySelector('#username-login').value.trim();
+    const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
@@ -11,7 +11,7 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/homepage');
             // document.location.replace('/homepage');
         } else {
             console.log(response)
