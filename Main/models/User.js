@@ -34,9 +34,9 @@ User.init(
       allowNull: false,
       validate: {
         len: [8,32],
-        isLowercase: true,
-        isUppercase: true,
-        isDecimal: true,
+        // isLowercase: true,
+        // isUppercase: true,
+        // isDecimal: true,
       },
     },
   },

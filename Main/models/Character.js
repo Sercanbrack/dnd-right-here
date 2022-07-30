@@ -67,11 +67,11 @@ Character.init(
             allowNull: false,
         },
         attacks: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: true,
         },
         spells: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: true,
         },
     },
