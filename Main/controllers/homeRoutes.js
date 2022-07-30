@@ -10,13 +10,11 @@ router.get("/homepage", withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Character }],
     });
-
-    const characters = characterData.map((user) => user.get(({plain: true})));
-    res.render('homepage', {
-      ...characters,
-      logged_in: true
-    });
+    const characters = characterData.characters.map((user) => user.get(({plain: true})));
+    const toRender = {characters, logged_in: true}
+    res.render('homepage', toRender);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
