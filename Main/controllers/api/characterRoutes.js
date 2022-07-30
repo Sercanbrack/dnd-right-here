@@ -40,12 +40,12 @@ router.get("/:id", async (req, res) => {
       });
   
       const character = characterData.get({ plain: true });
-  
-      // res.render("character", {
-      //   ...character,
-      //   logged_in: req.session.logged_in,
-      // });
-    res.status(200).json(characterData)
+      console.log(character)
+      res.render("detail", {
+        character,
+        logged_in: req.session.logged_in,
+      });
+    // res.status(200).json(characterData)
 
     } catch (err) {
       res.status(500).json(err);
