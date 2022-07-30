@@ -22,7 +22,7 @@ Character.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        classes: {
+        class: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -67,11 +67,11 @@ Character.init(
             allowNull: false,
         },
         attacks: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: true,
         },
         spells: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: true,
         },
     },

@@ -1,20 +1,43 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Character } = require('../../models');
 
-router.get('/', async (req, res) => {
-    try {
+router.get('/all', async (req, res) => {
+    // try {
       
-      const userData = await User.findAll({
+    //   const userData = await User.findAll({
         
-        });
+    //     });
+  
+    //   const users = userData.map((user) => user.get({ plain: true }));
+  
+
+    //   res.status(200).json(userData)
+    // } catch (err) {
+    //   console.log(err)
+    //   res.status(500).json("why u no"+err);
+    // }
+
+    try {
+      const userData = await User.findAll({
+        include: [
+          {
+            model: Character,
+            attributes: ['name'],
+          },
+        ],
+      });
   
       const users = userData.map((user) => user.get({ plain: true }));
-  
-
+      console.log(users)
+      // Pass serialized data and session flag into template
+      // res.render('homepage', { 
+      //   posts, 
+      //   logged_in: req.session.logged_in 
+      // });
       res.status(200).json(userData)
     } catch (err) {
       console.log(err)
-      res.status(500).json("why u no"+err);
+      res.status(500).json(err);
     }
   });
 
