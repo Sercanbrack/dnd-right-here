@@ -21,13 +21,17 @@ router.get('/', async (req, res) => {
   router.post('/', async (req, res) => {
     try {
       const userData = await User.create(req.body);
-  
+      console.log(userData)
       req.session.save(() => {
         req.session.user_id = userData.id;
+        req.session.name = userData.name;
         req.session.logged_in = true;
-      })
+        console.log("session logged in?", req.session.logged_in)
         res.status(200).json(userData);
-      
+
+      })
+
+        
     } catch (err) {
       console.log("didn't make it " + err)
       res.status(400).json(err);
@@ -36,7 +40,6 @@ router.get('/', async (req, res) => {
 
   router.post('/login', async (req, res) => {
     try {
-      // const userData = await User.findOne({ where: { email: req.body.email } });
       const userData = await User.findOne({ where: { email: req.body.email } });
   
       if (!userData) {
@@ -58,7 +61,7 @@ router.get('/', async (req, res) => {
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
-        
+        req.session.name = userData.name
         res.json({ user: userData, message: 'You are now logged in!' });
       });
   

@@ -47,9 +47,8 @@ const signupFormHandler = async (event) => {
         });
      if (response.ok) {
         alert("character created");
-
-        document.location.replace('/homepage')
         
+        document.location.replace('/');        
     } else {
         console.log("browser"+response)
         alert(response.statusText);
