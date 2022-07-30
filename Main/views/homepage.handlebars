@@ -16,33 +16,35 @@
     
     <main class="bg-dark">
         <div class="container">
+            {{#each characters as |character|}}
             <div class="row">
                 <div class="col-3 card">
                     <div class="card-img-top">
                         <img src="/Symbol-Images/DnD-Paladin.png">
                     </div>
                     <div class="pl-2 pt-2 pb-2 text-white bg-secondary card-top">
-                        <div class="card-title"><h3>{{Character Name}}</h3></div>
+                        <div class="card-title"><h3>{{character.name}}</h3></div>
                         <!-- <div class="card-title"><h3>Class</h3></div> -->
                     </div>
                     <div class="card-body bg-light">
-                        <p class="card-text">RACE:{{RACE}}</p>
+                        <p class="card-text">RACE:{{character.race}}</p>
                         <div class="row">
-                            <p class="col">STR:{{STR}}</p>
-                            <p class="col">INT:{{INT}}</p>
+                            <p class="col">STR:{{character.strength}}</p>
+                            <p class="col">INT:{{character.intelligence}}</p>
                         </div>
                         <div class="row">
-                            <p class="col">DEX:{{DEX}}</p>
-                            <p class="col">WIS:{{WIS}}</p>
+                            <p class="col">DEX:{{character.dexterity}}</p>
+                            <p class="col">WIS:{{character.wisdom}}</p>
                         </div>
                         <div class="row">
-                            <p class="col">Const:{{Const}}</p>
-                            <p class="col">CHAR:{{CHAR}}</p>
+                            <p class="col">Const:{{character.constitution}}</p>
+                            <p class="col">CHAR:{{character.charisma}}</p>
                         </div>
                         <div class="card-footer">Campaign:</div>
                     </div>
                 </div>
             </div>
+            {{/each}}
         </div>   
     </main>
     
