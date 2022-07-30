@@ -1,7 +1,6 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
-
-    const email = document.querySelector('#email-login').value.trim();
+    const email = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
@@ -12,17 +11,19 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/homepage');
-        } else (
+            document.location.replace('/');
+            // document.location.replace('/homepage');
+        } else {
+            console.log(response)
             alert(response.statusText)
-        )
+        }
     }
 }
 
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
-    const userName = document.querySelector('#username-signup').value.trim();
+    const name = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
     const confirmPassword = document.querySelector('#confirm-signup').value.trim();
@@ -30,30 +31,36 @@ const signupFormHandler = async (event) => {
 
     function checkPassword () { 
         if (password !== confirmPassword) {
-        alert(response.statusText)
+        alert("passwords must match")
         return false;
     } else {
         return true;
     }
     } 
 
-    if (userName && email && password && (checkedPassword=true)) {
+    if (name && email && password && (checkedPassword=true)) {
+        console.log(name, email, password)
         const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({ userName, email, password }),
+            body: JSON.stringify({ name, email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
-    } if (response.ok) {
-        document.location.replace('/homepage')
+     if (response.ok) {
+        alert("character created");
+        
+        document.location.replace('/');        
     } else {
+        console.log("browser"+response)
         alert(response.statusText);
     }
-}
+    }}
+
+// changing bindings for buttons
 
 document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+    .querySelector('#loginButton')
+    .addEventListener('click', loginFormHandler);
 
 document
-    .querySelector('.login-form')
-    .addEventListener('submit', signupFormHandler);
+    .querySelector('#createButton')
+    .addEventListener('click', signupFormHandler);
