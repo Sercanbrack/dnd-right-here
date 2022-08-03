@@ -2,20 +2,7 @@ const router = require('express').Router();
 const { User, Character } = require('../../models');
 
 router.get('/all', async (req, res) => {
-    // try {
-      
-    //   const userData = await User.findAll({
-        
-    //     });
-  
-    //   const users = userData.map((user) => user.get({ plain: true }));
-  
 
-    //   res.status(200).json(userData)
-    // } catch (err) {
-    //   console.log(err)
-    //   res.status(500).json("why u no"+err);
-    // }
 
     try {
       const userData = await User.findAll({

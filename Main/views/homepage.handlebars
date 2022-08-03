@@ -2,6 +2,7 @@
 
     <header class="jumbotron text-white bg-secondary">
         <button type="button" class="m-3 p-2 bg-dark text-light">Create Character</button>
+       <p><button data-id="{{toRender.characters.id}}" id="deleteButton" type="button" class="m-3 p-2 bg-dark text-light">Delete Character</button></p> 
         <button class="float-right btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Filter By
@@ -61,5 +62,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <script src="../server.js"></script>
+    {{!-- <script src="./server.js"></script> --}}
+    <script src="../js/homepage.js"></script>
 </body>
