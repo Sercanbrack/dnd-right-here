@@ -14,9 +14,13 @@ router.get("/homepage", withAuth, async (req, res) => {
     const toRender = {characters, logged_in: true}
 
     if (!characterData) {
-      res.redirect("/users/all");
+      console.log("NO CHARACTER DATA")
+      res.render('homepage', {
+        logged_in: req.session.logged_in 
+      });
       } else {
-    res.render('homepage', toRender);
+      console.log("is character data")
+      res.render('homepage', toRender);
       }
   } catch (err) {
     console.log(err);

@@ -28,6 +28,30 @@ router.get('/', async (req, res) => {
 });
 
 
+router.get('/create', async (req, res) => {
+  try {
+    // const characterData = await Character.findAll({
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
+
+    // const characters = characterData.map((character) => character.get({ plain: true }));
+    console.log("hello")
+    res.render('create', { 
+      // posts, 
+      logged_in: req.session.logged_in 
+    });
+    // res.status(200).json(characterData)
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+});
+
 
 router.get("/:id", async (req, res) => {
     try {
