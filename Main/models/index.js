@@ -3,7 +3,7 @@ const Character = require('./Character');
 
 User.hasMany(Character, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+    // onDelete: 'CASCADE'
 });
 
 Character.belongsTo(User, {
