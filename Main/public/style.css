@@ -33,6 +33,10 @@ body {
     border-radius: 5px;
 }
 
+.detail-screen{
+    color:white;
+}
+
 /* .card {
     height: 75vh;
 } */
