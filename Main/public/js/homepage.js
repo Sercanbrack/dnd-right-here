@@ -9,8 +9,8 @@ const deleteFunction = async (event) => {
   
       if (response.ok) {
         alert("Character successfully deleted.")
-        // document.location.replace('/');
-        document.location.reload();
+        document.location.replace('/');
+        // document.location.reload();
 
       } else {
         alert('Error: Failed to delete character.');

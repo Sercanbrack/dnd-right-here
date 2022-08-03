@@ -13,7 +13,7 @@
             <a class="dropdown-item" href="#">Newest</a>
             <a class="dropdown-item" href="#">A to Z</a>
         </div>
-        <button type="button" class="m-3 p-2 bg-dark text-light">Create Character</button>
+        <button type="button" id="createButton" class="m-3 p-2 bg-dark text-light">Create Character</button>
         <h1 class="display-4 text-center">Characters</h1>
 
 
@@ -29,9 +29,11 @@
                             <div class="card-title pl-2">
                                 <h3>{{character.name}}</h3>
                             </div>
-                            <p><button data-id="{{character.id}}" id="deleteButton" type="button"
+                            
+                                <p><button data-id="{{character.id}}" id="deleteButton" type="button"
                                     class="bg-dark text-light">Delete Character</button>
-                        </div>
+                                 
+                                     
                         <div class="card-body bg-light">
                             <p class="card-text">RACE:{{character.race}}</p>
                             <div class="row">
