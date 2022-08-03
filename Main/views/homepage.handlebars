@@ -1,33 +1,31 @@
 <body class="bg-warning">
 
     <header class="jumbotron text-white bg-secondary">
-        <button type="button" id="createChar" class="m-3 p-2 bg-dark text-light">Create Character</button>
-        <button class="float-right btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Filter By
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Class</a>
-            <a class="dropdown-item" href="#">Newest</a>
-            <a class="dropdown-item" href="#">A to Z</a>
-        </div>
-        <h1 class="display-4 text-center">Characters</h1>
+
+
+                <button class="float-right btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Filter By
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Class</a>
+                <a class="dropdown-item" href="#">Newest</a>
+                <a class="dropdown-item" href="#">A to Z</a>
+              </div>
+            <h1 class="display-4 text-center">Characters</h1>
+
+
     </header>
 
     <main class="bg-dark">
         <div class="container">
             {{#each characters as |character|}}
             <div class="row">
-                <div class="col-3 card">
-                    <a href=/api/character/{{character.id}}>
-                    <div class="card-img-top">
-                        <img src="/Symbol-Images/DnD-Paladin.png" />
-                    </div>
-                    <div class="pl-2 pt-2 pb-2 text-white bg-secondary card-top">
-                        <div class="card-title">
-                            <h3>{{character.name}}</h3>
-                        </div>
-                        <!-- <div class="card-title"><h3>Class</h3></div> -->
+
+                {{#each character as |character|}}
+                <div class="col-3-md card mt-3 mb-3 pb-3">
+                    <div class="pl-2 pr-2 mt-3 pt-2 text-white bg-secondary card-top">
+                        <div class="card-title"><h3>{{character.name}}</h3></div>
+
                     </div>
                     <div class="card-body bg-light">
                         <p class="card-text">RACE:{{character.race}}</p>
@@ -43,9 +41,11 @@
                             <p class="col">Const:{{character.constitution}}</p>
                             <p class="col">CHAR:{{character.charisma}}</p>
                         </div>
-                        <div class="card-footer">Campaign:</div>
+                        <div class="card-footer">Campaign:{{character.campaign}}</div>
                     </div>
-                    </a>
+
+                {{/each}}    
+
                 </div>
             </div>
             {{/each}}
