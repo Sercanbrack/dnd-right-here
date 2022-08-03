@@ -12,7 +12,7 @@ router.get("/homepage", withAuth, async (req, res) => {
     });
     const characters = characterData.characters.map((user) => user.get(({plain: true})));
     const toRender = {characters, logged_in: true}
-    console.log(toRender.characters[0].id)
+    // console.log(toRender.characters[0].id)
     res.render('homepage', toRender);
   } catch (err) {
     console.log(err);
