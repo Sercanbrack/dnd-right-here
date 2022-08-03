@@ -1,58 +1,59 @@
 <body class="bg-warning">
 
     <header class="jumbotron text-white bg-secondary">
-        <button type="button" class="m-3 p-2 bg-dark text-light">Create Character</button>
+
+
         <button class="float-right btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Filter By
         </button>
+
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Class</a>
             <a class="dropdown-item" href="#">Newest</a>
             <a class="dropdown-item" href="#">A to Z</a>
         </div>
+        <button type="button" class="m-3 p-2 bg-dark text-light">Create Character</button>
         <h1 class="display-4 text-center">Characters</h1>
+
+
     </header>
 
     <main class="bg-dark">
         <div class="container">
-            {{#each characters as |character|}}
             <div class="row">
-
-                <div class="col-3 card">
+                {{#each characters as |character|}}
+                <div class="col-3-md card mt-3 mb-3 pb-3">
                     <a href=/api/character/{{character.id}}>
-                    <div class="card-img-top">
-                        <img src="/Symbol-Images/DnD-Paladin.png" />
-                    </div>
-                    <div class="pl-2 pt-2 pb-2 text-white bg-secondary card-top">
-                        <div class="card-title">
-                            <h3>{{character.name}}</h3>
-                            <p><button data-id="{{character.id}}" id="deleteButton" type="button" class="bg-dark text-light">Delete Character</button>
-</p>
+                        <div class="pl-2 pr-2 mt-3 pt-2 text-white bg-secondary card-top">
+                            <div class="card-title">
+                                <h3>{{character.name}}</h3>
+                            </div>
+                            <p><button data-id="{{character.id}}" id="deleteButton" type="button"
+                                    class="bg-dark text-light">Delete Character</button>
                         </div>
-                        <!-- <div class="card-title"><h3>Class</h3></div> -->
-                    </div>
-                    <div class="card-body bg-light">
-                        <p class="card-text">RACE:{{character.race}}</p>
-                        <div class="row">
-                            <p class="col">STR:{{character.strength}}</p>
-                            <p class="col">INT:{{character.intelligence}}</p>
+                        <div class="card-body bg-light">
+                            <p class="card-text">RACE:{{character.race}}</p>
+                            <div class="row">
+                                <p class="col">STR:{{character.strength}}</p>
+                                <p class="col">INT:{{character.intelligence}}</p>
+                            </div>
+                            <div class="row">
+                                <p class="col">DEX:{{character.dexterity}}</p>
+                                <p class="col">WIS:{{character.wisdom}}</p>
+                            </div>
+                            <div class="row">
+                                <p class="col">Const:{{character.constitution}}</p>
+                                <p class="col">CHAR:{{character.charisma}}</p>
+                            </div>
+                            <div class="card-footer">Campaign:{{character.campaign}}</div>
                         </div>
-                        <div class="row">
-                            <p class="col">DEX:{{character.dexterity}}</p>
-                            <p class="col">WIS:{{character.wisdom}}</p>
-                        </div>
-                        <div class="row">
-                            <p class="col">Const:{{character.constitution}}</p>
-                            <p class="col">CHAR:{{character.charisma}}</p>
-                        </div>
-                        <div class="card-footer">Campaign:</div>
-                    </div>
+
+
                     </a>
                 </div>
-
+                {{/each}}
             </div>
-            {{/each}}
         </div>
     </main>
 
@@ -65,6 +66,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    {{!-- <script src="./server.js"></script> --}}
+    {{!--
+    <script src="./server.js"></script> --}}
     <script src="../js/homepage.js"></script>
 </body>
