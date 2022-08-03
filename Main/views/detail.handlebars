@@ -66,6 +66,33 @@
         </div>
             </form>
     <p><button data-id="{{character.id}}" id="deleteButton" type="button" class="m-3 p-2 bg-dark text-light">Delete Character</button></p> 
+    <div class="row">
+            <div class="col-3 card">
+                <div class="pl-2 pt-2 pb-2 text-white bg-secondary card-top">
+                    <div class="card-title">
+                        <h3>Dice</h3>
+                    </div>  
+                </div>
+                <div class="card-body bg-light">
+                    <div class="form-group col">
+                        <input type="text" class="form-control" id="inputRollAmt" placeholder="1-9">
+                        <select name="dice-rolled" id="diceRolled">
+                            <option value="2">d2</option>
+                            <option value="4">d4</option>
+                            <option value="6">d6</option>
+                            <option value="8">d8</option>
+                            <option value="10">d10</option>
+                            <option value="12">d12</option>
+                            <option value="20">d20</option>
+                            <option value="100">d100</option>
+                        </select>
+                        <button type="button" class="m-3 p-2 bg-dark text-light" onclick="roll()">Roll</button>
+                    </div>
+                    <label for="rollOutput">Result:</label>
+                    <span style="text-decoration: underline" id="rollOutput"></span>
+                </div>
+            </div>
+        </div>
 
 </div>
 <script src="../../js/detail.js"></script>
