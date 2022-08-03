@@ -1,15 +1,21 @@
-var createBtn = document.getElementById('createCharBtn');
-var editBtn = document.getElementById('editCharBtn');
+var confirmCharBtn = document.getElementById('createCharBtn');
+var updateBtn = document.getElementById('updateBtn');
 var createCharacter = document.getElementById('createChar');
+var goToEdit = document.getElementById('editTheChar')
 
-createBtn.onclick = function goToCreatePage() {
+confirmCharBtn.onclick = function confirmChar() {
     document.location.replace('/homepage');
+    
 };
 
-editBtn.onclick = function goToEditPage() {
+updateBtn.onclick = function confirmEdit() {
     document.location.replace('/homepage');
 };
 
 createCharacter.onclick = function goToCharPage() {
     document.location.replace('/create');
 };
+
+goToEdit.onclick = function goToEditPage() {
+    document.location.replace('/edit')
+}
