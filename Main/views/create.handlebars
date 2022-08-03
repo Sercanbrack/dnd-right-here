@@ -87,9 +87,8 @@
         </div>
             </form>
 </div>
-    <div>
         <div class="row">
-            <div class="col-3 card">
+            <div class="col-8 card">
                 <div class="pl-2 pt-2 pb-2 text-white bg-secondary card-top">
                     <div class="card-title">
                         <h3>Dice</h3>
@@ -108,11 +107,11 @@
                             <option value="20">d20</option>
                             <option value="100">d100</option>
                         </select>
-                        <button type="button" class="m-3 p-2 bg-dark text-light" onclick="roll()">Roll</button>
+                        <button type="button" class="m-3 p-2 bg-dark text-light" id="rollButton">Roll</button>
                     </div>
                     <label for="rollOutput">Result:</label>
                     <span style="text-decoration: underline" id="rollOutput"></span>
                 </div>
             </div>
         </div>
-    </div>
+        <script src="/js/dice.js"></script>

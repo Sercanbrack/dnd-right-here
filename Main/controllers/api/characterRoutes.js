@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Character } = require('../../models');
+const dicerpg = require('dice-rpg')
 
 router.get('/', async (req, res) => {
   try {
@@ -87,4 +88,18 @@ router.get("/:id", async (req, res) => {
     }
   });
 
+router.get('/roll/:input', async (req, res) => {
+  try {
+    console.log(req.params.input)
+  const rollDice = dicerpg.rolled(req.params.input)
+  console.log(rollDice)
+  let rolledValues = Object.values(rollDice)[0]
+  let output = rolledValues.toString()
+  console.log(output)
+  res.json({output})
+  } catch (err) {
+    console.log(err)
+    res.status(400).json(err)
+  }
+})
   module.exports = router;
