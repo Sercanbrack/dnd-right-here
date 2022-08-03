@@ -12,8 +12,12 @@ router.get("/homepage", withAuth, async (req, res) => {
     });
     const characters = characterData.characters.map((user) => user.get(({plain: true})));
     const toRender = {characters, logged_in: true}
-    console.log(toRender.characters[0].id)
+
+    if (!characterData) {
+      res.redirect("/users/all");
+      } else {
     res.render('homepage', toRender);
+      }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

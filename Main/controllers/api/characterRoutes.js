@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Character } = require('../../models');
+const withAuth = require("../../utils/auth");
 
 router.get('/', async (req, res) => {
   try {
@@ -66,7 +67,7 @@ router.get("/:id", async (req, res) => {
     }
   });
 
-  router.delete('/:id', async (req, res) => {
+  router.delete('/:id', withAuth, async (req, res) => {
     try {
        const characterData = await Character.destroy({
         logged_in: true ,
