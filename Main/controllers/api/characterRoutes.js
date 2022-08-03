@@ -52,37 +52,6 @@ router.get("/:id", async (req, res) => {
     }
   });
 
-  // router.post("/create", async (req, res) => {
-  //   try {
-  //       const characterData = Character.create({
-  //           include: [
-  //              {
-  //                model: Character,
-  //               attributes: [
-  //                   id, 
-  //                   user_id,
-  //                   name, 
-  //                   classes, 
-  //                   race, 
-  //                   level, 
-  //                   hitPoints, 
-  //                   strength, 
-  //                   dexterity, 
-  //                   constitution, 
-  //                   intelligence, 
-  //                   wisdom, 
-  //                   charisma, 
-  //                   armorClass, 
-  //                   attacks, 
-  //                   spells],
-  //               },
-  //           ],
-  //       });
-  //   } catch (err) {
-  //       res.status(500).json(err);
-  //   }
-  // });
-
   router.post('/', async (req, res) => {
     try {
       const newCharacter = await Character.create({
@@ -100,6 +69,7 @@ router.get("/:id", async (req, res) => {
   router.delete('/:id', async (req, res) => {
     try {
        const characterData = await Character.destroy({
+        logged_in: true ,
         where: {
             id: req.params.id,
             user_id: req.session.user_id,
@@ -109,6 +79,8 @@ router.get("/:id", async (req, res) => {
         res.status(404).json({ message: "No character with this id."});
         return;
        }
+       console.log(req.session)
+       console.log(req.session.logged_in)
        res.status(202).json(characterData);
     } catch (err) {
         res.status(500).json(err);
