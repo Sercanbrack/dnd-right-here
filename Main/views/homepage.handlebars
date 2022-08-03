@@ -2,7 +2,6 @@
 
     <header class="jumbotron text-white bg-secondary">
         <button type="button" class="m-3 p-2 bg-dark text-light">Create Character</button>
-       <p><button data-id="{{toRender.characters.id}}" id="deleteButton" type="button" class="m-3 p-2 bg-dark text-light">Delete Character</button></p> 
         <button class="float-right btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Filter By
@@ -19,6 +18,7 @@
         <div class="container">
             {{#each characters as |character|}}
             <div class="row">
+
                 <div class="col-3 card">
                     <a href=/api/character/{{character.id}}>
                     <div class="card-img-top">
@@ -27,6 +27,8 @@
                     <div class="pl-2 pt-2 pb-2 text-white bg-secondary card-top">
                         <div class="card-title">
                             <h3>{{character.name}}</h3>
+                            <p><button data-id="{{character.id}}" id="deleteButton" type="button" class="bg-dark text-light">Delete Character</button>
+</p>
                         </div>
                         <!-- <div class="card-title"><h3>Class</h3></div> -->
                     </div>
@@ -48,6 +50,7 @@
                     </div>
                     </a>
                 </div>
+
             </div>
             {{/each}}
         </div>
