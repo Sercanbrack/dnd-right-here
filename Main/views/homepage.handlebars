@@ -22,8 +22,11 @@
     <main>
         <div class="container">
             <div class="row">
+                                {{#each characters as |character|}}
+
+                <p><button data-id="{{character.id}}" id="deleteButton" type="button"
+                                    class="bg-dark text-light">Delete Character</button>
                 <div class="col-3 card" id="editTheChar">
-                {{#each characters as |character|}}
                 <div class="col-3-md card mt-3 mb-3 ml-4 pb-3" id="character">
                     <a href=/api/character/{{character.id}}>
                         <div class="pl-2 pr-2 mt-3 pt-2 text-white bg-secondary card-top">
@@ -31,8 +34,7 @@
                                 <h3>{{character.name}}</h3>
                             </div>
                             
-                                <p><button data-id="{{character.id}}" id="deleteButton" type="button"
-                                    class="bg-dark text-light">Delete Character</button>
+                                
                                  
                                      
                         <div class="card-body bg-light">

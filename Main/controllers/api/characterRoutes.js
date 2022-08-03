@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Character } = require('../../models');
 const dicerpg = require('dice-rpg')
+const withAuth = require("../../utils/auth");
 
 router.get('/', async (req, res) => {
   try {
@@ -30,22 +31,13 @@ router.get('/', async (req, res) => {
 
 router.get('/create', async (req, res) => {
   try {
-    // const characterData = await Character.findAll({
-    //   include: [
-    //     {
-    //       model: User,
-    //       attributes: ['name'],
-    //     },
-    //   ],
-    // });
 
-    // const characters = characterData.map((character) => character.get({ plain: true }));
-    console.log("hello")
+    console.log("hello create")
     res.render('create', { 
-      // posts, 
+      
       logged_in: req.session.logged_in 
     });
-    // res.status(200).json(characterData)
+    // res.status(200).json()
   } catch (err) {
     console.log(err)
     res.status(500).json(err);
