@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet"> 
+    <link href="/style.css" rel="stylesheet"> 
+    <link href="/characters.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +14,8 @@
 </head>
 
 <body>
-    <div class="bg-warning">
-        <header class="jumbotron text-white bg-secondary">
+    <div>
+        <header class="jumbotron text-white bg-transparent">
             <nav>
                 {{#if logged_in}}
                 <a href="/homepage" class="btn btn-dark text-left">Homepage</a>
@@ -22,7 +23,7 @@
                 {{/if}}
             </nav>
         </header>
-        <main class="bg-dark">
+        <main>
             {{{ body }}}
         </main>
         <footer>

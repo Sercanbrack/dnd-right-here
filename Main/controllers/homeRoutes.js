@@ -13,6 +13,7 @@ router.get("/homepage", withAuth, async (req, res) => {
     const characters = characterData.characters.map((user) => user.get(({plain: true})));
     const toRender = {characters, logged_in: true}
 
+
     if (!characterData) {
       console.log("NO CHARACTER DATA")
       res.render('homepage', {

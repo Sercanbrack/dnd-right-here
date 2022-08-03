@@ -1,8 +1,8 @@
-body{
+body, header{
     font-family:'Fondamento', cursive;
 }
 
-.card{
+#character{
     border-radius: 20px;
     border-width: 3px;
     border-color:orange;

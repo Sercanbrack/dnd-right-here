@@ -24,7 +24,7 @@ body {
 
 .card-body {
     background-color: rgb(41, 45, 49);
-    height: 75vh;
+    /* height: 75vh; */
 }
 
 .button1 {
@@ -33,6 +33,10 @@ body {
     border-radius: 5px;
 }
 
-.card {
-    height: 75vh;
+.detail-screen{
+    color:white;
 }
+
+/* .card {
+    height: 75vh;
+} */
