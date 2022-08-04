@@ -1,7 +1,7 @@
 [
     {
       "name": "Grognak",
-      "class": "Barbarian",
+      "characterClass": "Barbarian",
       "race": "Orc",
       "level": "1",
       "hitPoints": "14", 
@@ -17,7 +17,7 @@
     },
     {
         "name": "LLewin",
-        "class": "Mage",
+        "characterClass": "Mage",
         "race": "Elf",
         "level": "1",
         "hitPoints": "5", 
@@ -33,7 +33,7 @@
       },
       {
         "name": "James",
-        "class": "Ranger",
+        "characterClass": "Ranger",
         "race": "Human",
         "level": "1",
         "hitPoints": "13", 
