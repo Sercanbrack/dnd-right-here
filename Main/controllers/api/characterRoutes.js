@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Character } = require('../../models');
 const dicerpg = require('dice-rpg')
-const withAuth = require("../../utils/auth");
+const withAuth = require('../../utils/auth.js')
 
 router.get('/', async (req, res) => {
   try {
